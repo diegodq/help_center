@@ -15,7 +15,7 @@ export const Container = styled.div`
 `;
 
 export const DivFooter = styled.div`
-  height: 120px;
+  height: 90px;
   background-color: #F7F7F7;
   display: flex;
   align-items: center;
@@ -42,6 +42,7 @@ export const FaLinkedinIcon = styled(FaLinkedin)`
 export const TfiHelpAltIcon = styled(TfiHelpAlt)`
   font-size: 2.4rem;
   margin-right: 10px;
+  color: #3D194F;
 `;
 
 export const Div = styled.div`

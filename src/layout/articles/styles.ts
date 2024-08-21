@@ -17,7 +17,7 @@ export const Div = styled.div`
 `;
 
 export const Title = styled.h2`
-  font: 1.2rem Arial, sans-serif;
+  font: 1.2rem bahnschrift, sans-serif;
   text-align: center;
 `;
 
@@ -27,7 +27,7 @@ export const Ul = styled.ul`
 
 export const Li = styled.li`
   text-align: center;
-  font: .9rem Arial, sans-serif;
+  font: .9rem bahnschrift, sans-serif;
 `;
 
 export const LinkShowAllPosts = styled.a`
@@ -35,6 +35,6 @@ export const LinkShowAllPosts = styled.a`
   text-align: center;
   text-decoration: none;
   color: blue;
-  font: 1rem Arial, sans-serif;
+  font: 1rem bahnschrift, sans-serif;
   margin-top: 10px;
 `;

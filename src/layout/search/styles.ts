@@ -4,10 +4,11 @@ export const SearchArea = styled.div`
   height: 300px;
   background-color: #3D194F;
   position: relative;
+  width: 100%;
 `;
 
 export const TitleArea = styled.h2`
-  font: 1.3rem Arial, sans-serif;
+  font: 1.3rem bahnschrift, sans-serif;
   color: white;
   margin-bottom: 15px;
   
@@ -21,8 +22,9 @@ export const Div = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 600px;
 
-  @media (max-width: 580px) {
-    width: 100%;
+  @media (max-width: 635px) {
+    width: 90%;
   }
 `;

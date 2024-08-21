@@ -26,11 +26,11 @@ export const DivTitleLinks = styled.div`
 `;
 
 export const TitlePage = styled.h2`
-  font: 1.3rem Arial, sans-serif;
+  font: 1.3rem bahnschrift, sans-serif;
 `;
 
 export const Link = styled.a`
-  font: .9rem Arial, sans-serif;
+  font: .9rem bahnschrift, sans-serif;
   text-decoration: none;
   color: white;
   font-weight: bold;

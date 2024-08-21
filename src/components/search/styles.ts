@@ -6,19 +6,16 @@ export const Container = styled.div`
   align-items: center;
   padding: 10px 10px;
   border-radius: 20px;
-  border: 1px solid white;
-  width: 600px;
   background-color: white;
-
-  @media (max-width: 580px) {
-    width: 90%;
-  }
+  width: 100%;
 `;
 
 export const InputSearchField = styled.input`
   border: none;
   outline: none;
   width: 100%;
+  font-family: bahnschrift;
+  font-size: 1rem;
 `;
 
 export const MdOutlineSearchIcon = styled(MdOutlineSearch)`

@@ -21,7 +21,14 @@ const GlobalStyles = createGlobalStyle`
     font: inherit;
     vertical-align: baseline;
     box-sizing: border-box;
+    scroll-behavior: smooth;
   }
+
+  @font-face {
+    font-family: bahnschrift;
+    src: url('/fonts/bahnschriftRegular.ttf') format('truetype');
+  }
+
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure, 
   footer, header, hgroup, menu, nav, section {
