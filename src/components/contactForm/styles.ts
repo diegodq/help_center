@@ -16,7 +16,7 @@ export const Span = styled.span`
   }
 
   &.radioButton {
-    
+
   }
 
   &.readWarning {
@@ -28,7 +28,7 @@ export const Input = styled.input`
   outline: none;
 
   &.inputSubmit {
-    background-color: #3D194F;
+    background-color: #F5F8FA;
     color: white;
     border: none;
     padding: 12px 35px;
@@ -55,7 +55,7 @@ export const Input = styled.input`
       }
     `}
 
-  ${({type}) => 
+  ${({type}) =>
     type === 'tel' && `
       width: 100%;
       height: 34px;
@@ -66,7 +66,7 @@ export const Input = styled.input`
       }
     `}
 
-  ${({type}) => 
+  ${({type}) =>
     type === 'email' && `
       width: 99%;
       height: 34px;

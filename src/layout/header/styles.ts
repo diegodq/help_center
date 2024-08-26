@@ -44,6 +44,5 @@ export const Link = styled.a`
 
 export const DivTitleLink = styled.div`
   display: flex;
-  display: flex;
   align-items: center;
 `;

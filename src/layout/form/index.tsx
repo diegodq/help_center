@@ -1,6 +1,6 @@
-import { ReactElement } from "react";
+import React, { ReactElement } from "react";
 import { Container, DivText, DivForm, LuHelpCircleIcon, H1, H2, Span, Paragraph } from "./styles";
-import ContactForm from "../../components/contactForm";
+import ContactForm from "../../components/ContactForm";
 
 
 const Form: React.FC = (): ReactElement => {

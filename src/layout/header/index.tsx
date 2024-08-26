@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import React, { ReactElement } from "react";
 import { Container, LinkHome, ImgLogo, DivTitleLinks, TitlePage, DivTitleLink, Link } from "./styles";
 
 const Logo = '/images/logo2.svg';
