@@ -4,7 +4,7 @@ import App from "../App";
 import LoginForm from "../components/LoginForm";
 import ForgotPasswordForm from "../components/ForgotPasswordForm";
 import ResetPasswordForm from "../components/ResetPasswordForm";
-import Painel from "../layout/Panel";
+import Panel from "../layout/Panel";
 import NotFound from "../components/NotFound";
 
 const Router: React.FC = (): ReactElement => {
@@ -15,7 +15,7 @@ const Router: React.FC = (): ReactElement => {
         <Route path="/Login" element={<LoginForm />} />
         <Route path="/forgot-password" element={<ForgotPasswordForm />} />
 				<Route path="/reset-password" element={<ResetPasswordForm />} />
-				<Route path="/panel/*" element={<Painel />} />
+				<Route path="/panel/*" element={<Panel />} />
 				<Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
