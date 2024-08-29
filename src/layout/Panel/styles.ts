@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+
 `;
 
 export const Header = styled.header`
@@ -39,12 +40,12 @@ export const Aside = styled.aside`
 	top: 0;
 	bottom: 0;
 	/* width: 65px; */
-	width: 220px;
+	width: 190px;
 	transition: .2s;
 	box-shadow: 0 5px 3px grey;
 
 	&.slidePanel {
-		width: 220px;
+		width: 190px;
 	}
 
 	@media (max-width: 991px) {

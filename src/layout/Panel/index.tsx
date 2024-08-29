@@ -11,6 +11,10 @@ import Posts from "../../components/Posts";
 import Users from "../../components/Users";
 import Theme from "../../components/Theme";
 import Settings from "../../components/Settings";
+import NewPost from "../../components/NewPost";
+import NewUser from "../../components/NewUser";
+import NewCategory from "../../components/NewCategory";
+import Tags from "../../components/Tags";
 
 // type HandleSlideInType = () => void;
 
@@ -50,7 +54,11 @@ const Painel: React.FC = (): ReactElement => {
 						<Route path="/" element={<Dashboard />} />
 						<Route path="/dashboard" element={<Dashboard />} />
             <Route path="posts" element={<Posts />} />
+						<Route path='new-post' element={<NewPost />} />
+						<Route path='new-category' element={<NewCategory />} />
+						<Route path='tags' element={<Tags />} />
             <Route path="users" element={<Users />} />
+						<Route path='new-user' element={<NewUser />} />
             <Route path="theme" element={<Theme />} />
             <Route path="settings" element={<Settings />} />
 					</Routes>

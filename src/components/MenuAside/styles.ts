@@ -14,20 +14,24 @@ export const Container = styled.div`
 `;
 
 export const Nav = styled.nav`
-	border: 1px solid red;
+
 `;
 
 export const Ul = styled.ul`
+`;
+
+export const UlSubMenu = styled.ul`
+
+`;
+
+export const LiSubMenu = styled.li`
+	padding: 6px 0 6px 37px;
 `;
 
 export const Li = styled.li`
 	display: flex;
 	align-items: center;
 	padding: 8px 0 8px 16px;
-
-	&:hover {
-		background-color: #e8e8e8;
-	}
 `;
 
 export const LinkMenu = styled(Link)`
@@ -35,6 +39,10 @@ export const LinkMenu = styled(Link)`
 	color: black;
 	font: 1rem bahnschrift, sans-serif;
 	margin-left: 4px;
+
+	&:hover {
+		text-decoration: underline;
+	}
 `;
 
 export const NewPostIcon = styled(GiPin)`
@@ -55,4 +63,24 @@ export const IoIosSettingsIcon = styled(IoIosSettings)`
 
 export const AppearanceIcon = styled(BiSolidBrush)`
 	font-size: 1.3rem;
+`;
+
+export const PostsSubMenu = styled.div`
+	background-color: #efefef;
+	padding: 5px 0;
+	display: none;
+
+	&.togglePostSubMenu {
+		display: block;
+	}
+`;
+
+export const UsersSubMenu = styled.div`
+	background-color: #efefef;
+	padding: 5px 0;
+	display: none;
+
+	&.toggleUsersSubmenu {
+		display: block;
+	}
 `;
