@@ -8,14 +8,16 @@ import { BiSolidBrush } from "react-icons/bi";
 
 export const Container = styled.div`
 	margin-top: 20px;
+	position: fixed;
+	top: 130px;
+	width: inherit;
 `;
 
 export const Nav = styled.nav`
-
+	border: 1px solid red;
 `;
 
 export const Ul = styled.ul`
-
 `;
 
 export const Li = styled.li`
@@ -33,30 +35,24 @@ export const LinkMenu = styled(Link)`
 	color: black;
 	font: 1rem bahnschrift, sans-serif;
 	margin-left: 4px;
-	color: #3D194F;
 `;
 
 export const NewPostIcon = styled(GiPin)`
 	font-size: 1.3rem;
-	color: #3D194F;
 `;
 
 export const DashboardIcon = styled(RiDashboard2Fill)`
 	font-size: 1.3rem;
-	color: #3D194F;
 `;
 
 export const UserIcon = styled(FaUser)`
 	font-size: 1.3rem;
-	color: #3D194F;
 `;
 
 export const IoIosSettingsIcon = styled(IoIosSettings)`
 	font-size: 1.3rem;
-	color: #3D194F;
 `;
 
 export const AppearanceIcon = styled(BiSolidBrush)`
 	font-size: 1.3rem;
-	color: #3D194F;
 `;

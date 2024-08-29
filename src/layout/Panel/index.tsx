@@ -3,7 +3,7 @@ import { Container, Header, Aside, Main, DivContent, Div } from "./styles";
 import MenuIcon from "../../components/MenuIcon";
 import LogoIcon from "../../components/LogoIcon";
 import UserMenu from "../../components/UserMenu";
-import LogoAside from "../../components/LogoAside";
+// import LogoAside from "../../components/LogoAside";
 import MenuAside from "../../components/MenuAside";
 import { Route, Routes } from "react-router-dom";
 import Dashboard from "../../components/Dashboard";
@@ -12,7 +12,23 @@ import Users from "../../components/Users";
 import Theme from "../../components/Theme";
 import Settings from "../../components/Settings";
 
+// type HandleSlideInType = () => void;
+
+// type HandleSlideOutType = () => void;
+
 const Painel: React.FC = (): ReactElement => {
+	// const asideMenuRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
+
+	// const handleSlideIn: HandleSlideInType = () => {
+	// 	if (asideMenuRef.current)
+	// 		asideMenuRef.current.classList.add('slidePanel');
+	// }
+
+	// const handleSlideOut: HandleSlideOutType = () => {
+	// 	if (asideMenuRef.current)
+	// 		asideMenuRef.current.classList.remove('slidePanel');
+	// }
+
 	return (
 		<Container>
 			<Header>
@@ -25,7 +41,7 @@ const Painel: React.FC = (): ReactElement => {
 				</Div>
 			</Header>
 			<Aside>
-				<LogoAside />
+				{/* <LogoAside /> */}
 				<MenuAside />
 			</Aside>
 			<DivContent>

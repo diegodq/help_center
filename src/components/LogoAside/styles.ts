@@ -13,7 +13,6 @@ export const Div = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-
 `;
 
 export const Img = styled.img`
@@ -28,8 +27,12 @@ export const Title = styled.span`
 export const BsPinAngleFillIcon = styled(BsPinAngleFill)`
 	color: black;
 	position: absolute;
-	top: 10px;
-	right: 10px;
+	top: 30px;
+	right: 30px;
 	cursor: pointer;
 	font-size: 1.2rem;
+`;
+
+export const Link = styled.a`
+
 `;

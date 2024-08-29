@@ -38,9 +38,14 @@ export const Aside = styled.aside`
 	position: fixed;
 	top: 0;
 	bottom: 0;
-	/* width: 70px; */
+	/* width: 65px; */
 	width: 220px;
+	transition: .2s;
 	box-shadow: 0 5px 3px grey;
+
+	&.slidePanel {
+		width: 220px;
+	}
 
 	@media (max-width: 991px) {
 		display: none;

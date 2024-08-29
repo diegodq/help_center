@@ -2,29 +2,37 @@ import styled from "styled-components";
 import { FaChevronDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-export const Div = styled.div`
-	&.containerMenu {
-		display: flex;
-		position: relative;
-	}
+export const ContainerMenu = styled.div`
+	display: flex;
+	position: relative;
+`;
 
-	&.dataUser {
-		display: flex;
-		flex-direction: column;
-		align-items: end;
-		margin-right: 11px;
-	}
+export const DataUser = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+	margin-right: 11px;
+	cursor: pointer;
+`;
 
-	&.menuHide {
-		width: 140px;
-		border-radius: 5px;
-		background-color: white;
-		box-shadow: 0 0 2px grey;
-		position: absolute;
-		top: 55px;
-		left: -8px;
-		padding: 10px 0;
+export const MenuHide = styled.div`
+	width: 140px;
+	border-radius: 5px;
+	background-color: white;
+	box-shadow: 0 0 2px grey;
+	position: absolute;
+	top: 55px;
+	left: -8px;
+	padding: 10px 0;
+	display: none;
+
+	&.showUserMenuHide {
+		display: block;
 	}
+`;
+
+export const Nav = styled.nav`
+
 `;
 
 export const NameUser = styled.span`
