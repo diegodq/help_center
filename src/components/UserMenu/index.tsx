@@ -1,7 +1,7 @@
-import React, { ReactElement, RefObject, useRef } from "react";
+import React, { ReactElement, RefObject, useRef } from 'react';
 import { NameUser, TypeUser, UserImg, ChevronDownIcon, Ul, Li,
 	LinkScreen, ContainerMenu, DataUser, MenuHide, Nav
- } from "./styles";
+ } from './styles';
 
  type HandleShowUserMenu = () => void;
 
@@ -32,8 +32,8 @@ const UserMenu: React.FC = (): ReactElement => {
 			<MenuHide ref={hideMenuRef} onMouseLeave={handleHideUserMenu}>
 				<Nav>
 					<Ul>
-						<Li><LinkScreen to="/panel/settings">Configurações</LinkScreen></Li>
-						<Li><LinkScreen to="/logout">Sair</LinkScreen></Li>
+						<Li><LinkScreen to='/panel/settings'>Configurações</LinkScreen></Li>
+						<Li><LinkScreen to='/logout'>Sair</LinkScreen></Li>
 					</Ul>
 				</Nav>
 			</MenuHide>

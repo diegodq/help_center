@@ -1,7 +1,7 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement } from 'react';
 import { Container, DivFooter, TfiHelpAltIcon, Div, TitleHelpCenter, EmailLink, Link,
   FaLinkedinIcon, RiInstagramFillIcon
- } from "./styles";
+ } from './styles';
 
 const Footer: React.FC = (): ReactElement => {
   return (
@@ -10,15 +10,15 @@ const Footer: React.FC = (): ReactElement => {
         <TfiHelpAltIcon />
         <Div>
           <TitleHelpCenter>Atendimento suporte</TitleHelpCenter>
-          <EmailLink href="mailto:contato@automatizafacil.com.br">contato@automatizafacil.com.br</EmailLink>
+          <EmailLink href='mailto:contato@automatizafacil.com.br'>contato@automatizafacil.com.br</EmailLink>
         </Div>
       </DivFooter>
 
       <DivFooter>
-        <Link href="#">
+        <Link href='#'>
           <FaLinkedinIcon />
         </Link>
-        <Link href="#">
+        <Link href='#'>
           <RiInstagramFillIcon />
         </Link>
       </DivFooter>

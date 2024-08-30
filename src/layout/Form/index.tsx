@@ -1,11 +1,11 @@
-import React, { ReactElement } from "react";
-import { Container, DivText, DivForm, LuHelpCircleIcon, H1, H2, Span, Paragraph } from "./styles";
-import ContactForm from "../../components/ContactForm";
+import React, { ReactElement } from 'react';
+import { Container, DivText, DivForm, LuHelpCircleIcon, H1, H2, Span, Paragraph } from './styles';
+import ContactForm from '../../components/ContactForm';
 
 
 const Form: React.FC = (): ReactElement => {
   return (
-    <Container id="contact">
+    <Container id='contact'>
       <DivText>
         <LuHelpCircleIcon />
         <H2>Está com alguma dúvida ou sugestão?</H2>

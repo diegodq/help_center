@@ -1,5 +1,5 @@
-import React, { ReactElement } from "react";
-import { Container, Div, Title, Ul, Li, LinkShowAllPosts } from "./styles";
+import React, { ReactElement } from 'react';
+import { Container, Div, Title, Ul, Li, LinkShowAllPosts } from './styles';
 
 const Articles: React.FC = (): ReactElement => {
   return (

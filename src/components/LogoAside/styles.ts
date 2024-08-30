@@ -5,7 +5,6 @@ export const Container = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	position: relative;
 `;
 
 export const Div = styled.div`
@@ -27,8 +26,8 @@ export const Title = styled.span`
 export const BsPinAngleFillIcon = styled(BsPinAngleFill)`
 	color: black;
 	position: absolute;
-	top: 30px;
-	right: 30px;
+	top: 20px;
+	right: 20px;
 	cursor: pointer;
 	font-size: 1.2rem;
 `;

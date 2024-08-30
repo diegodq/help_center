@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react"
+import React, { ReactElement } from 'react';
 import {Form, Input, ImgLogo, Div, InputEmail, Paragraph, BoldStyle, LoginLink, LoginBackIcon } from './styles';
 const Logo = '/images/logo2.svg';
 

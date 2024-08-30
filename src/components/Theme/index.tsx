@@ -1,13 +1,13 @@
-import { ReactElement } from "react";
+import { ReactElement } from 'react';
 import {LightIcon, DarkIcon, DivLight, DivDark,
-	RadioLight, RadioDark, Div, Text, Container} from "./styles";
+	RadioLight, RadioDark, Div, Text, Container} from './styles';
 
 const Theme: React.FC = (): ReactElement => {
 	return (
 		<Container>
 			<DivLight>
 				<LightIcon />
-				<Div className="footer">
+				<Div className='footer'>
 					<RadioLight type='radio' name='themeType' />
 					<Text>Claro</Text>
 				</Div>
@@ -24,4 +24,4 @@ const Theme: React.FC = (): ReactElement => {
 	)
 }
 
-export default Theme;
+export default Theme;''

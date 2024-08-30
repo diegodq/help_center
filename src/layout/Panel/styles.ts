@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import { BsChevronDoubleRight } from 'react-icons/bs';
 
 export const Container = styled.div`
 
@@ -23,10 +24,6 @@ export const Div = styled.div`
 		justify-content: center;
 		align-items: center;
 	}
-
-	&.divRight {
-
-	}
 `;
 
 export const DivContent = styled.div`
@@ -39,8 +36,7 @@ export const Aside = styled.aside`
 	position: fixed;
 	top: 0;
 	bottom: 0;
-	/* width: 65px; */
-	width: 190px;
+	width: 65px;
 	transition: .2s;
 	box-shadow: 0 5px 3px grey;
 
@@ -55,4 +51,8 @@ export const Aside = styled.aside`
 
 export const Main = styled.main`
 	height: 100%;
+`;
+
+export const SlidePanelIndicator = styled(BsChevronDoubleRight)`
+	font-size: 1.5rem;
 `;

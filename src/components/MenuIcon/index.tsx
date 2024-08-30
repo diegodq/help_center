@@ -1,5 +1,5 @@
-import React, { ReactElement } from "react";
-import { IconMenu } from "./styles";
+import React, { ReactElement } from 'react';
+import { IconMenu } from './styles';
 
 const MenuIcon: React.FC = (): ReactElement => {
 	return <IconMenu />

@@ -1,11 +1,15 @@
-import { ReactElement, useState, useRef, RefObject } from "react";
+import { ReactElement, useState, useRef, RefObject } from 'react';
 import { Container, Nav, Ul, Li, LinkMenu, NewPostIcon,
 	UserIcon, IoIosSettingsIcon, DashboardIcon, AppearanceIcon,
-	PostsSubMenu, UsersSubMenu, UlSubMenu, LiSubMenu} from "./styles";
+	PostsSubMenu, UsersSubMenu, UlSubMenu, LiSubMenu} from './styles';
 
 type HandleShowSubMenu = () => void;
 
-const MenuAside: React.FC = (): ReactElement => {
+type MenuAsideProps = {
+	isMenuSubMenuVisible: boolean;
+}
+
+const MenuAside: React.FC<MenuAsideProps> = ({ isMenuSubMenuVisible }: MenuAsideProps): ReactElement => {
 	const [toggleSubMenuPosts, setToggleSubMenu]= useState<boolean>(true);
 	const [toggleSubMenuUsers, setToggleSubMenuUsers] = useState<boolean>(true);
 
@@ -34,35 +38,39 @@ const MenuAside: React.FC = (): ReactElement => {
 				<Ul>
 					<Li>
 						<DashboardIcon />
-						<LinkMenu to="/panel/dashboard">Dashboard</LinkMenu>
+						{isMenuSubMenuVisible && (<LinkMenu to='/panel/dashboard'>Dashboard</LinkMenu>)}
 					</Li>
 					<Li>
 						<NewPostIcon />
-						<LinkMenu onClick={handlePostSubMenu} to="/panel/posts">Posts</LinkMenu>
+						{isMenuSubMenuVisible && (<LinkMenu onClick={handlePostSubMenu} to='/panel/posts'>Posts</LinkMenu>)}
 					</Li>
-					<PostsSubMenu ref={postSubMenuRef}>
-						<UlSubMenu>
-							<LiSubMenu className='subMenuLi'><LinkMenu to="/panel/new-post">Novo Post</LinkMenu></LiSubMenu>
-							<LiSubMenu className='subMenuLi'><LinkMenu to="/panel/new-category">Categorias</LinkMenu></LiSubMenu>
-							<LiSubMenu className='subMenuLi'><LinkMenu to="/panel/tags">Tags</LinkMenu></LiSubMenu>
-						</UlSubMenu>
-					</PostsSubMenu>
+					{isMenuSubMenuVisible && (
+						<PostsSubMenu ref={postSubMenuRef}>
+							<UlSubMenu>
+								<LiSubMenu className='subMenuLi'><LinkMenu to='/panel/new-post'>Novo Post</LinkMenu></LiSubMenu>
+								<LiSubMenu className='subMenuLi'><LinkMenu to='/panel/new-category'>Categorias</LinkMenu></LiSubMenu>
+								<LiSubMenu className='subMenuLi'><LinkMenu to='/panel/tags'>Tags</LinkMenu></LiSubMenu>
+							</UlSubMenu>
+						</PostsSubMenu>
+					)}
 					<Li>
 						<UserIcon />
-						<LinkMenu onClick={handleUsersSubMenu} to="/panel/users">Usuários</LinkMenu>
+						{isMenuSubMenuVisible && (<LinkMenu onClick={handleUsersSubMenu} to='/panel/users'>Usuários</LinkMenu>)}
 					</Li>
-					<UsersSubMenu ref={usersSubMenuRef}>
-						<UlSubMenu>
-							<LiSubMenu className='subMenuLi'><LinkMenu to="/panel/new-user">Novo Usuário</LinkMenu></LiSubMenu>
-						</UlSubMenu>
-					</UsersSubMenu>
+					{isMenuSubMenuVisible && (
+						<UsersSubMenu ref={usersSubMenuRef}>
+							<UlSubMenu>
+								<LiSubMenu className='subMenuLi'><LinkMenu to='/panel/new-user'>Novo Usuário</LinkMenu></LiSubMenu>
+							</UlSubMenu>
+						</UsersSubMenu>
+					)}
 					<Li>
 						<AppearanceIcon />
-						<LinkMenu to="/panel/theme">Tema</LinkMenu>
+						{isMenuSubMenuVisible && (<LinkMenu to='/panel/theme'>Tema</LinkMenu>)}
 					</Li>
 					<Li>
 						<IoIosSettingsIcon />
-						<LinkMenu to="/panel/settings">Configurações</LinkMenu>
+						{isMenuSubMenuVisible && (<LinkMenu to='/panel/settings'>Configurações</LinkMenu>)}
 					</Li>
 				</Ul>
 			</Nav>

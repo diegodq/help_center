@@ -1,5 +1,5 @@
-import { ReactElement } from "react";
-import { Container, Div, ImgNotFound, Title, SubTitle, TextNotFound } from "./styles";
+import { ReactElement } from 'react';
+import { Container, Div, ImgNotFound, Title, SubTitle, TextNotFound } from './styles';
 
 const NotFoundImg = '/images/404.png';
 
