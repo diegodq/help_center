@@ -15,7 +15,7 @@ const LoginForm: React.FC = (): ReactElement => {
 				</InputPassword>
 
 				<InputPassword>
-					<Input type='password' name='password' id='password' placeholder='Confirme a senha *' />
+					<Input type='password' name='confirm_password' id='confirm_password' placeholder='Confirme a senha *' />
 					<FaRegEyeSlashIcon />
 				</InputPassword>
 

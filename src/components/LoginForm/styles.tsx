@@ -72,14 +72,14 @@ export const Div = styled.div`
 
 `;
 
-export const FaRegEyeSlashIcon = styled(FaRegEyeSlash)`
+export const OpenEyeIcon  = styled(FaRegEyeSlash)`
   color: #3D194F;
   font-size: 1.6rem;
   cursor: pointer;
   margin-right: 14px;
 `;
 
-export const FaRegEyeOpenIcon = styled(FaRegEye)`
+export const CloseEyeIcon = styled(FaRegEye)`
   color: #3D194F;
   font-size: 1.6rem;
   cursor: pointer;

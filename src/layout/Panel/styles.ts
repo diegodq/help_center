@@ -54,5 +54,8 @@ export const Main = styled.main`
 `;
 
 export const SlidePanelIndicator = styled(BsChevronDoubleRight)`
-	font-size: 1.5rem;
+	position: fixed;
+	top: 30px;
+	left: 16px;
+	font-size: 1.4rem;
 `;

@@ -76,3 +76,10 @@ export const LinkScreen = styled(Link)`
 	text-decoration: none;
 	color: black;
 `;
+
+export const LogOut = styled.button`
+	background: none;
+	border: 0;
+	font: 1rem bahnschrift, sans-serif;
+	cursor: pointer;
+`;
