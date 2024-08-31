@@ -15,6 +15,7 @@ export const Form = styled.form`
 	left: 50%;
 	transform: translate(-50%, -50%);
 	border-radius: 9px;
+	background-color: white;
 
 	@media (max-width: 530px) {
 		width: 93%;

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import { FaRegEye } from "react-icons/fa6";
+import { Link } from "react-router-dom";
+import { MdKeyboardArrowLeft } from "react-icons/md";
 
 export const Form = styled.form`
 	width: 500px;
@@ -71,18 +73,32 @@ export const Div = styled.div`
 
 `;
 
-export const FaRegEyeSlashIcon = styled(FaRegEyeSlash)`
-	color: #3D194F;
-	font-size: 1.6rem;
-	cursor: pointer;
-	margin-right: 14px;
+export const CloseEyeIcon  = styled(FaRegEyeSlash)`
+  color: #3D194F;
+  font-size: 1.6rem;
+  cursor: pointer;
+  margin-right: 14px;
 `;
 
-export const FaRegEyeOpenIcon = styled(FaRegEye)`
-	color: #3D194F;
-	font-size: 1.6rem;
-	cursor: pointer;
-	margin-right: 14px;
+export const ConfirmCloseEyeIcon  = styled(FaRegEyeSlash)`
+  color: #3D194F;
+  font-size: 1.6rem;
+  cursor: pointer;
+  margin-right: 14px;
+`;
+
+export const OpenEyeIcon = styled(FaRegEye)`
+  color: #3D194F;
+  font-size: 1.6rem;
+  cursor: pointer;
+  margin-right: 14px;
+`;
+
+export const ConfirmOpenEyeIcon = styled(FaRegEye)`
+  color: #3D194F;
+  font-size: 1.6rem;
+  cursor: pointer;
+  margin-right: 14px;
 `;
 
 export const InputPassword = styled.div`
@@ -105,4 +121,21 @@ export const Paragraph = styled.p`
 
 export const BoldStyle = styled.b`
 	color: red;
+`;
+
+export const LoginLink = styled(Link)`
+	text-decoration: none;
+  margin-top: 20px;
+  font: 1.1rem bahnschrift, sans-serif;
+  color: #3D194F;
+	display: flex;
+	align-items: center;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+export const LoginBackIcon = styled(MdKeyboardArrowLeft)`
+
 `;
