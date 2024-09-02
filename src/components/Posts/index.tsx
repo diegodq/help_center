@@ -2,7 +2,7 @@ import { ReactElement } from 'react';
 import { Container, DivTitle, H1, NewPostButton, Filters, LinkFilter,
 	Div, InputFilter, Bold, TableMassActions, Table, THeader, TFooter, TBody, TR, TH, TD, Checkbox,
 	DivFiltersTable, DivMassOption, SelectMassOption, MassOptions, MassApplyButton, DivFilterSelect,
-	SelectDate, OptionDate, SelectCategories, OptionCategories, ButtonFilters
+	SelectDate, OptionDate, SelectCategories, OptionCategories, ButtonFilters, LoadingSpinner
  } from './styles';
 
 const Posts: React.FC = (): ReactElement => {
@@ -38,8 +38,8 @@ const Posts: React.FC = (): ReactElement => {
 					<DivFilterSelect>
 						<SelectDate>
 							<OptionDate value='all-dates'>Todas as Datas</OptionDate>
-							<OptionDate value='2024-September'>Setembro</OptionDate>
-							<OptionDate value='2024-October'>Outubro</OptionDate>
+							<OptionDate value='September'>Setembro</OptionDate>
+							<OptionDate value='October'>Outubro</OptionDate>
 						</SelectDate>
 
 						<SelectCategories>
@@ -48,6 +48,7 @@ const Posts: React.FC = (): ReactElement => {
 						</SelectCategories>
 
 						<ButtonFilters>Filtrar</ButtonFilters>
+						<LoadingSpinner />
 					</DivFilterSelect>
 				</DivFiltersTable>
 				<Table>
@@ -97,6 +98,7 @@ const Posts: React.FC = (): ReactElement => {
 						</SelectCategories>
 
 						<ButtonFilters>Filtrar</ButtonFilters>
+						<LoadingSpinner />
 					</DivFilterSelect>
 				</DivFiltersTable>
 			</TableMassActions>

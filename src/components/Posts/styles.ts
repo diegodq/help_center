@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { RiLoader4Line } from "react-icons/ri";
 
 export const Container = styled.h1`
 	width: 100%;
@@ -112,7 +113,8 @@ export const DivFiltersTable = styled.div`
 `;
 
 export const DivFilterSelect = styled.div`
-
+	display: flex;
+	align-items: center;
 `;
 
 export const SelectMassOption = styled.select`
@@ -170,4 +172,10 @@ export const ButtonFilters = styled.button`
 	&:hover {
 		color: #6277e3;
 	}
+`;
+
+export const LoadingSpinner = styled(RiLoader4Line)`
+	color: blue;
+	font-size: 1.4rem;
+	margin-left: 5px;
 `;
