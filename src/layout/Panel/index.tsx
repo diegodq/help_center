@@ -52,7 +52,7 @@ const Painel: React.FC = (): ReactElement => {
 				</Div>
 			</Header>
 			<Aside ref={asideMenuRef} onMouseOut={handleSlideOut} onMouseEnter={handleSlideIn}>
-				<SlidePanelIndicator />
+				{!isLogoAsideVisible && <SlidePanelIndicator />}
 				{isLogoAsideVisible && <LogoAside />}
 				<MenuAside isMenuSubMenuVisible={isLogoAsideVisible} />
 			</Aside>

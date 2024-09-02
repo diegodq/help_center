@@ -44,13 +44,17 @@ export const Aside = styled.aside`
 		width: 190px;
 	}
 
-	@media (max-width: 991px) {
+	@media (max-width: 1298px) {
 		display: none;
 	}
 `;
 
 export const Main = styled.main`
 	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	align-items: center;
 `;
 
 export const SlidePanelIndicator = styled(BsChevronDoubleRight)`

@@ -6,7 +6,7 @@ import ForgotPasswordForm from "../components/ForgotPasswordForm";
 import ResetPasswordForm from "../components/ResetPasswordForm";
 import Panel from "../layout/Panel";
 import NotFound from "../components/NotFound";
-import PrivateRoute from "./PrivateRoute";
+// import PrivateRoute from "./PrivateRoute";
 
 const Router: React.FC = (): ReactElement => {
   return (
@@ -16,7 +16,8 @@ const Router: React.FC = (): ReactElement => {
         <Route path="/login" element={<LoginForm />} />
         <Route path="/forgot-password" element={<ForgotPasswordForm />} />
 				<Route path="/reset-password" element={<ResetPasswordForm />} />
-				<Route path="/panel/*" element={<PrivateRoute> <Panel /> </PrivateRoute>} />
+				{/* <Route path="/panel/*" element={<PrivateRoute> <Panel /> </PrivateRoute>} /> */}
+				<Route path="/panel/*" element={<Panel />} />
 				<Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

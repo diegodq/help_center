@@ -1,8 +1,13 @@
 import { ReactElement } from 'react';
-import { H1 } from './styles';
+import { Container, H1 } from './styles';
+
 
 const Dashboard: React.FC = (): ReactElement => {
-	return <H1>DASHBOARD</H1>
+	return (
+		<Container>
+			<H1>Dashboard</H1>
+		</Container>
+	)
 }
 
 export default Dashboard;
