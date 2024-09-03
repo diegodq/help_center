@@ -37,27 +37,10 @@ export const Filters = styled.div`
 	margin-bottom: 18px;
 `;
 
-export const LinkFilter = styled.a`
-	margin-left: 10px;
-	text-decoration: none;
-	font: .9rem bahnschrift, sans-serif;
-	background: none;
-	border: none;
-`;
-
-export const Div = styled.div`
-	display: flex;
-	margin-right: 10px;
-`;
-
 export const InputFilter = styled.input`
 	outline: none;
 	padding: 5px 4px;
 	font: .9rem bahnschrift, sans-serif;
-`;
-
-export const Bold = styled.b`
-	color: black;
 `;
 
 export const TableMassActions = styled.div`

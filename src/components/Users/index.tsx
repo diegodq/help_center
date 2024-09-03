@@ -1,6 +1,5 @@
 import { ReactElement } from 'react';
-import { Container, DivTitle, H1, NewPostButton, Filters, LinkFilter,
-	Div, InputFilter, Bold, TableMassActions, Table, THeader, TFooter, TBody, TR, TH, Checkbox,
+import { Container, DivTitle, H1, NewPostButton, Filters, InputFilter, TableMassActions, Table, THeader, TFooter, TBody, TR, TH, Checkbox,
 	DivFiltersTable, DivMassOption, SelectMassOption, MassOptions, MassApplyButton, DivFilterSelect,
 	SelectDate, OptionDate, ButtonFilters, LoadingSpinner
  } from './styles';
