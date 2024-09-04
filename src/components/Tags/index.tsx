@@ -1,16 +1,18 @@
-import { ReactElement } from 'react';
-import { Container, AddCategoriesDiv, TitleDivCategory, Input, Div,
-	Text, Form, Title, TableDiv, Table, THead, TBody, TFooter,
-	TR, TD, Checkbox,
-	DivFilters,
-	SelectFilter,
-	OptionFilter,
-	ApplyButtonFilter,
-	LoadingSpinner,
-	WarnForm,
-	Bold} from './styles';
+import { ReactElement, useEffect, useState } from 'react';
+import { useLocation, Location } from 'react-router-dom';
+import FormCategoriesTags from '../FormCategoriesTags';
+import { Container, AddCategoriesDiv, TitleDivCategory, Title, TableDiv, Table, THead,
+	TBody, TFooter, TR, TD, Checkbox, DivFilters, SelectFilter,
+	OptionFilter, ApplyButtonFilter, LoadingSpinner} from './styles';
 
 const Tags: React.FC = (): ReactElement => {
+	const [actualRoute, setActualRoute] = useState<string>('');
+	const location: Location<{from: string}> = useLocation();
+
+	useEffect((): void => {
+		setActualRoute(location.pathname.substring('/panel/'.length));
+	}, [location]);
+
 	return (
 		<Container>
 			<Title>Categorias</Title>
@@ -18,18 +20,7 @@ const Tags: React.FC = (): ReactElement => {
 			<AddCategoriesDiv>
 				<TitleDivCategory>Adicionar nova categoria</TitleDivCategory>
 
-				<Form action='' method='POST'>
-					<WarnForm>Campos com <Bold>*</Bold> são obrigatórios</WarnForm>
-					<Div>
-						<Input type='text' name='category' id='category' placeholder='Nome *' />
-					</Div>
-
-					<Div>
-						<Input type='text' name='slug' id='slug' placeholder='Slug *' />
-						<Text>O “slug” é uma versão amigável do URL. Normalmente é todo em minúsculas <br />e contém apenas letras, números e hifens.</Text>
-					</Div>
-					<Input type='submit' value='Adicionar nova tag' />
-				</Form>
+				<FormCategoriesTags actualRoute={actualRoute} />
 			</AddCategoriesDiv>
 
 			<TableDiv>
