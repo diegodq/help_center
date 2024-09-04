@@ -16,10 +16,22 @@ export const Title = styled.span`
 export const SubTitle = styled.span`
 	font: .9rem bahnschrift, sans-serif;
 	margin: 10px 0 10px 0;
+	display: block;
 `;
 
 export const Form = styled.form`
 
+`;
+
+export const Bold = styled.b`
+	color: red;
+`;
+
+export const WarnForm = styled.span`
+	font: .9rem bahnschrift, sans-serif;
+	margin-bottom: 8px;
+	display: block;
+	color: grey;
 `;
 
 export const Input = styled.input`
@@ -68,12 +80,13 @@ export const Input = styled.input`
 
 export const Label = styled.label`
 	margin: 18px 0 18px 0;
-	display: block;
 	font: .9rem bahnschrift, sans-serif;
+	display: flex;
+	align-items: center;
 `;
 
 export const Span = styled.span`
-
+	margin-top: 3px;
 `;
 
 export const SelectPosition = styled.select`
@@ -104,10 +117,18 @@ export const Div = styled.div`
 
 	&.passwordEye {
 		display: flex;
-		border: 1px solid #8C8F94;
+		border: 2px solid #8C8F94;
 		width: 300px;
 		padding: 5px;
 		background-color: white;
+	}
+
+	&.statusStrength {
+		width: 300px;
+		background-color: grey;
+		padding: 7px 0;
+		text-align: center;
+		font: 1.1rem bahnschrift, sans-serif;
 	}
 `;
 

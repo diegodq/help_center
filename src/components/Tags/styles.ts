@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { RiLoader4Line } from "react-icons/ri";
 
 export const Container = styled.h1`
 	width: 100%;
@@ -13,6 +14,17 @@ export const Title = styled.span`
 
 export const Form = styled.form`
 	margin-top: 15px;
+`;
+
+export const Bold = styled.b`
+	color: red;
+`;
+
+export const WarnForm = styled.span`
+	font: .9rem bahnschrift, sans-serif;
+	margin-bottom: 8px;
+	display: block;
+	color: grey;
 `;
 
 export const AddCategoriesDiv = styled.div`
@@ -103,6 +115,8 @@ export const Checkbox = styled.input`
 
 export const DivFilters = styled.div`
 	margin: 10px 0 10px 0;
+	display: flex;
+	align-items: center;
 `;
 
 export const SelectFilter = styled.select`
@@ -125,4 +139,10 @@ export const ApplyButtonFilter = styled.button`
 	&:hover {
 		color: #6277e3;
 	}
+`;
+
+export const LoadingSpinner = styled(RiLoader4Line)`
+	color: blue;
+	font-size: 1.4rem;
+	margin-left: 5px;
 `;

@@ -33,6 +33,7 @@ export const BodyBox = styled.div`
 	background-color: #FFFFFF;
 	padding: 15px;
 	border: 1px solid #C3C4C7;
+	overflow: hidden;
 `;
 
 export const TitleBox = styled.h3`
@@ -47,6 +48,18 @@ export const ControlBoxButton = styled(RiArrowDownSFill)`
 
 export const FormQuickDraft = styled.form`
 	width: 100%;
+`;
+
+export const Bold = styled.b`
+	color: red;
+`;
+
+export const WarnForm = styled.span`
+	font: .9rem bahnschrift, sans-serif;
+	margin-bottom: 8px;
+	display: block;
+	color: grey;
+	text-align: center;
 `;
 
 export const Input = styled.input`
@@ -69,11 +82,12 @@ export const TextArea = styled.textarea`
 `;
 
 export const RecentDraftDiv = styled.div`
-
+	margin-top: 15px;
 `;
 
 export const TitleRecentDraft = styled.h3`
-
+	font: 1rem bahnschrift, sans-serif;
+	margin-bottom: 7px;
 `;
 
 export const Ul = styled.ul`
@@ -81,13 +95,25 @@ export const Ul = styled.ul`
 `;
 
 export const Li = styled.li`
-
+	& + & {
+		margin-top: 9px;
+	}
 `;
 
 export const DateRecentDraft = styled.span`
-
+	color: grey;
 `;
 
 export const ButtonSendQuickDraft = styled.button`
 	display: block;
+	font: .9rem bahnschrift, sans-serif;
+	border: none;
+	background-color: #135E96;
+	color: white;
+	padding: 8px 15px 7px 15px;
+	cursor: pointer;
+`;
+
+export const LinkDraft = styled.a`
+	text-decoration: none;
 `;

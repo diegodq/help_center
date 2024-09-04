@@ -5,7 +5,10 @@ import { Container, AddCategoriesDiv, TitleDivCategory, Input, Div,
 	DivFilters,
 	SelectFilter,
 	OptionFilter,
-	ApplyButtonFilter} from './styles';
+	ApplyButtonFilter,
+	LoadingSpinner,
+	WarnForm,
+	Bold} from './styles';
 
 const NewCategory: React.FC = (): ReactElement => {
 	return (
@@ -16,12 +19,13 @@ const NewCategory: React.FC = (): ReactElement => {
 				<TitleDivCategory>Adicionar nova categoria</TitleDivCategory>
 
 				<Form action='' method='POST'>
+					<WarnForm>Campos com <Bold>*</Bold> são obrigatórios</WarnForm>
 					<Div>
-						<Input type='text' name='category' id='category' placeholder='Nome' />
+						<Input type='text' name='category' id='category' placeholder='Nome *' />
 					</Div>
 
 					<Div>
-						<Input type='text' name='slug' id='slug' placeholder='Slug' />
+						<Input type='text' name='slug' id='slug' placeholder='Slug *' />
 						<Text>O “slug” é uma versão amigável do URL. Normalmente é todo em minúsculas <br />e contém apenas letras, números e hifens.</Text>
 					</Div>
 					<Input type='submit' value='Adicionar nova categoria' />
@@ -36,6 +40,7 @@ const NewCategory: React.FC = (): ReactElement => {
 					</SelectFilter>
 
 					<ApplyButtonFilter>Aplicar</ApplyButtonFilter>
+					<LoadingSpinner />
 				</DivFilters>
 				<Table>
 					<THead>
@@ -63,6 +68,7 @@ const NewCategory: React.FC = (): ReactElement => {
 					</SelectFilter>
 
 					<ApplyButtonFilter>Aplicar</ApplyButtonFilter>
+					<LoadingSpinner />
 				</DivFilters>
 			</TableDiv>
 		</Container>

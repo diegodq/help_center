@@ -1,6 +1,8 @@
 import { FormEvent, ReactElement, useState} from 'react';
 import { Container, CreateUserButton, Div, Form, GeneratePasswordButton, Title, Input, Label,
-	OptionPosition, SelectPosition, Span, SubTitle, CloseEye, OpenEye, DivInputValidation} from './styles';
+	OptionPosition, SelectPosition, Span, SubTitle, CloseEye, OpenEye, DivInputValidation,
+	WarnForm,
+	Bold} from './styles';
 
 type HandleShowPassword = () => void;
 
@@ -42,6 +44,7 @@ const NewUser: React.FC = (): ReactElement => {
 		<Container>
 			<Title>Novo usuário</Title>
 			<SubTitle>Crie um usuário novinho em folha e o adicione a este site.</SubTitle>
+			<WarnForm>Campos com <Bold>*</Bold> são obrigatórios</WarnForm>
 
 			<Form action='' method='POST' onSubmit={handleSubmit}>
 				<DivInputValidation>
@@ -67,7 +70,7 @@ const NewUser: React.FC = (): ReactElement => {
 				</Label>
 
 				<SelectPosition>
-					<OptionPosition value='nothing'>Função</OptionPosition>
+					<OptionPosition value='nothing'>Função *</OptionPosition>
 					<OptionPosition value='employee'>Colaborador</OptionPosition>
 					<OptionPosition value='author'>Autor</OptionPosition>
 					<OptionPosition value='editor'>Editor</OptionPosition>
@@ -79,6 +82,9 @@ const NewUser: React.FC = (): ReactElement => {
 					<Div className='passwordEye'>
 						<Input className='password' type='text' name='password' id='password' />
 						{showPassword ? <OpenEye onClick={handleShowPassword} />  : <CloseEye onClick={handleShowPassword} />}
+					</Div>
+					<Div className='statusStrength'>
+						Forte
 					</Div>
 				</Div>
 
