@@ -108,6 +108,8 @@ export const CreateUserButton = styled.button`
 	height: 34px;
 	cursor: pointer;
 	margin-top: 15px;
+	font: 1rem bahnschrift, sans-serif;
+	border: none;
 `;
 
 export const Div = styled.div`
@@ -126,9 +128,10 @@ export const Div = styled.div`
 	&.statusStrength {
 		width: 300px;
 		background-color: grey;
-		padding: 7px 0;
+		padding: 5px 0;
 		text-align: center;
-		font: 1.1rem bahnschrift, sans-serif;
+		font: 1rem bahnschrift, sans-serif;
+		color: white;
 	}
 `;
 
