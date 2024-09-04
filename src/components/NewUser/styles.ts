@@ -8,12 +8,12 @@ export const Container = styled.h1`
 	margin-top: 10px;
 `;
 
-export const H1 = styled.h1`
+export const Title = styled.span`
 	font: 1.3rem bahnschrift, sans-serif;
 	margin-right: 10px;
 `;
 
-export const SubTitle = styled.h2`
+export const SubTitle = styled.span`
 	font: .9rem bahnschrift, sans-serif;
 	margin: 10px 0 10px 0;
 `;
@@ -52,7 +52,6 @@ export const Input = styled.input`
 		font: .9rem bahnschrift, sans-serif;
 	`}
 
-
 	${({type}) => type === 'checkbox' && `
 		display: inline;
 	`}
@@ -61,7 +60,6 @@ export const Input = styled.input`
 		outline: none;
 		border: none;
 		width: 100%;
-		padding: 1px;
 		font: 1rem bahnschrift, sans-serif;
 		background-color: none;
 		padding-right: 8px;
