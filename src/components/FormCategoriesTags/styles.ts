@@ -34,3 +34,25 @@ export const Text = styled.p`
 	font: .9rem bahnschrift, sans-serif;
 	margin-top: 8px;
 `;
+
+export const Input = styled.input`
+	outline: none;
+	height: 25px;
+	font: .9rem bahnschrift, sans-serif;
+	padding-left: 6px;
+
+	${({type}) => type === 'text' && `
+		width: 500px;
+	`}
+
+
+	${({type}) => type === 'submit' && `
+		color: white;
+		background-color: #135E96;
+		border: none;
+		padding: 0 17px;
+		height: 34px;
+		cursor: pointer;
+		margin-top: 15px;
+	`}
+`;

@@ -25,6 +25,7 @@ export const DivLight = styled.div`
 	position: relative;
 	background-color: #ededed;
 	box-shadow: 0 0 2px black;
+	cursor: pointer;
 
 	@media (max-width: 440px) {
 		margin-right: 0;
@@ -43,6 +44,7 @@ export const DivDark = styled.div`
 	position: relative;
 	background-color: #ededed;
 	box-shadow: 0 0 2px black;
+	cursor: pointer;
 `;
 
 export const LightIcon = styled(PiProjectorScreenChartDuotone)`
@@ -71,12 +73,6 @@ export const Div = styled.div`
 
 export const Text = styled.span`
 	font: 1.1rem bahnschrift, sans-serif;
-`;
-
-export const RadioLight = styled.input`
-
-`;
-
-export const RadioDark = styled.input`
-
+	text-align: center;
+	display: block;
 `;

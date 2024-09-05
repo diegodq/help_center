@@ -1,6 +1,5 @@
 import { ChangeEvent, ReactElement, useState } from "react";
-import { Bold, Div, Form, WarnForm, Text } from "./styles";
-import { Input } from "../ContactForm/styles";
+import { Bold, Div, Form, WarnForm, Text, Input} from "./styles";
 
 type ElementEvent = ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>;
 
