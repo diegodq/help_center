@@ -10,8 +10,10 @@ const Posts: React.FC = (): ReactElement => {
 		<Container>
 			<DivTitle>
 				<H1>Posts</H1>
-				<NewPostButton>Adicionar novo post</NewPostButton>
+
 			</DivTitle>
+
+			<NewPostButton>Adicionar novo post</NewPostButton>
 
 			<Filters>
 				<Div>
@@ -56,8 +58,8 @@ const Posts: React.FC = (): ReactElement => {
 						<TR>
 							<TH><Checkbox type='checkbox' />Título</TH>
 							<TH>Autor</TH>
-							<TH>Categoria</TH>
-							<TH>Data</TH>
+							<TD className='hide-on-mobile'>Categoria</TD>
+							<TD className='hide-on-mobile'>Data</TD>
 						</TR>
 					</THeader>
 
@@ -69,8 +71,8 @@ const Posts: React.FC = (): ReactElement => {
 						<TR>
 							<TD><Checkbox type='checkbox' />Título</TD>
 							<TD>Autor</TD>
-							<TD>Categoria</TD>
-							<TD>Data</TD>
+							<TD className='hide-on-mobile'>Categoria</TD>
+							<TD className='hide-on-mobile'>Data</TD>
 						</TR>
 					</TFooter>
 				</Table>

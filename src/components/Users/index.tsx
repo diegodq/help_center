@@ -1,16 +1,16 @@
 import { ReactElement } from 'react';
-import { Container, DivTitle, H1, NewPostButton, Filters, InputFilter, TableMassActions, Table, THeader, TFooter, TBody, TR, TH, Checkbox,
+import { Container, DivTitle, H1, NewUserButton, Filters, InputFilter, TableMassActions, Table, THeader, TFooter, TBody, TR, TH, Checkbox,
 	DivFiltersTable, DivMassOption, SelectMassOption, MassOptions, MassApplyButton, DivFilterSelect,
-	SelectDate, OptionDate, ButtonFilters, LoadingSpinner
- } from './styles';
+	SelectDate, OptionDate, ButtonFilters, LoadingSpinner } from './styles';
 
 const Users: React.FC = (): ReactElement => {
 	return (
 		<Container>
 			<DivTitle>
-				<H1>Posts</H1>
-				<NewPostButton>Adicionar novo Usuário</NewPostButton>
+				<H1>Usuários</H1>
 			</DivTitle>
+
+			<NewUserButton>Adicionar novo Usuário</NewUserButton>
 
 			<Filters>
 				<InputFilter type='text' name='filter' id='filter' placeholder='Pesquisar por usuários' />
@@ -45,8 +45,8 @@ const Users: React.FC = (): ReactElement => {
 						<TR>
 							<TH><Checkbox type='checkbox' />Nome de usuário</TH>
 							<TH>E-mail</TH>
-							<TH>Função</TH>
-							<TH>Posts</TH>
+							<TH className='hide-on-mobile'>Função</TH>
+							<TH className='hide-on-mobile'>Posts</TH>
 						</TR>
 					</THeader>
 
@@ -58,8 +58,8 @@ const Users: React.FC = (): ReactElement => {
 					<TR>
 							<TH><Checkbox type='checkbox' />Nome de usuário</TH>
 							<TH>E-mail</TH>
-							<TH>Função</TH>
-							<TH>Posts</TH>
+							<TH className='hide-on-mobile'>Função</TH>
+							<TH className='hide-on-mobile'>Posts</TH>
 						</TR>
 					</TFooter>
 				</Table>

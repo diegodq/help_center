@@ -4,8 +4,9 @@ import { FiEyeOff } from "react-icons/fi";
 
 export const Container = styled.h1`
 	width: 100%;
-	max-width: 1190px;
-	margin-top: 10px;
+	max-width: 800px;
+	margin: 20px auto;
+	padding: 0 15px;
 `;
 
 export const Title = styled.span`

@@ -4,7 +4,8 @@ import { RiLoader4Line } from "react-icons/ri";
 export const Container = styled.h1`
 	width: 100%;
 	max-width: 1190px;
-	margin-top: 10px;
+	margin: 20px auto;
+	padding: 0 15px;
 `;
 
 export const DivTitle = styled.div`
@@ -17,13 +18,16 @@ export const H1 = styled.h1`
 	margin-right: 10px;
 `;
 
-export const NewPostButton = styled.a`
+export const NewUserButton = styled.a`
 	background-color: #f7f7f7;
 	border: 1px solid #c4dbff;
 	padding: 5px 15px;
 	border-radius: 2px;
 	font: 1rem bahnschrift, sans-serif;
 	cursor: pointer;
+	margin-top: 15px;
+	display: block;
+	width: 202px;
 
 	&:hover {
 		color: #6277e3;
@@ -35,12 +39,21 @@ export const Filters = styled.div`
 	display: flex;
 	align-items: center;
 	margin-bottom: 18px;
+
+	@media (max-width: 543px) {
+		flex-direction: column;
+	}
 `;
 
 export const InputFilter = styled.input`
 	outline: none;
 	padding: 5px 4px;
 	font: .9rem bahnschrift, sans-serif;
+
+	@media (max-width: 543px) {
+		margin-top: 10px;
+		width: 90%;
+	}
 `;
 
 export const TableMassActions = styled.div`
@@ -76,6 +89,12 @@ export const TH = styled.th`
 	padding: 6px;
 	width: 25%;
 	text-align: left;
+
+	@media (max-width: 660px) {
+		&.hide-on-mobile {
+			display: none;
+		}
+	}
 `;
 
 export const Checkbox = styled.input`
@@ -98,6 +117,10 @@ export const DivFiltersTable = styled.div`
 export const DivFilterSelect = styled.div`
 	display: flex;
 	align-items: center;
+
+	@media (max-width: 596px) {
+		display: none;
+	}
 `;
 
 export const SelectMassOption = styled.select`
@@ -152,4 +175,9 @@ export const LoadingSpinner = styled(RiLoader4Line)`
 	color: blue;
 	font-size: 1.4rem;
 	margin-left: 5px;
+	display: none;
+
+	&.showLoader {
+		display: block;
+	}
 `;

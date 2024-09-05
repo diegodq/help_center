@@ -3,8 +3,9 @@ import { RiLoader4Line } from "react-icons/ri";
 
 export const Container = styled.h1`
 	width: 100%;
-	max-width: 1190px;
-	margin-top: 10px;
+	max-width: 1000px;
+	margin: 20px auto;
+	padding: 0 15px;
 `;
 
 export const Title = styled.span`
@@ -75,7 +76,7 @@ export const TableDiv = styled.div`
 
 export const Table = styled.table`
 	border-collapse: collapse;
-	width: 80%;
+	width: 100%;
 	table-layout: fixed;
 `;
 
@@ -145,4 +146,9 @@ export const LoadingSpinner = styled(RiLoader4Line)`
 	color: blue;
 	font-size: 1.4rem;
 	margin-left: 5px;
+	display: none;
+
+	&.showLoader {
+		display: block;
+	}
 `;

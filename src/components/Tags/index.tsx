@@ -15,7 +15,7 @@ const Tags: React.FC = (): ReactElement => {
 
 	return (
 		<Container>
-			<Title>Categorias</Title>
+			<Title>Tags</Title>
 
 			<AddCategoriesDiv>
 				<TitleDivCategory>Adicionar nova categoria</TitleDivCategory>

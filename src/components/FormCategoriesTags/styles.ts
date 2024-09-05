@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Form = styled.form`
 	margin-top: 15px;
+	width: 100%;
 `;
 
 export const Bold = styled.b`
@@ -43,6 +44,10 @@ export const Input = styled.input`
 
 	${({type}) => type === 'text' && `
 		width: 500px;
+
+		@media (max-width: 547px) {
+			width: 97%;
+		}
 	`}
 
 
@@ -54,5 +59,11 @@ export const Input = styled.input`
 		height: 34px;
 		cursor: pointer;
 		margin-top: 15px;
+
+		@media (max-width: 547px) {
+			display: block;
+			margin: 0 auto;
+			margin-top:15px;
+		}
 	`}
 `;

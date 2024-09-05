@@ -4,7 +4,8 @@ import { RiArrowDownSFill } from "react-icons/ri";
 export const Container = styled.h1`
 	width: 100%;
 	max-width: 1190px;
-	margin-top: 10px;
+	margin-top: 20px;
+	padding: 0 10px;
 `;
 
 export const Title = styled.span`
@@ -12,7 +13,18 @@ export const Title = styled.span`
 `;
 
 export const DivBoxes = styled.div`
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+	margin: 15px auto;
 
+	@media (max-width: 800px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@media (max-width: 530px) {
+		grid-template-columns: 1fr;
+	}
 `;
 
 export const Box = styled.div`
@@ -37,13 +49,17 @@ export const BodyBox = styled.div`
 `;
 
 export const TitleBox = styled.h3`
-	font: .9rem bahnschrift, sans-serif;
+	font: 1rem bahnschrift, sans-serif;
 `;
 
 export const ControlBoxButton = styled(RiArrowDownSFill)`
 	font-size: 1.8rem;
 	cursor: pointer;
 	color: #787C82;
+
+	&.rotate {
+		transform: rotate(180deg);
+	}
 `;
 
 export const FormQuickDraft = styled.form`

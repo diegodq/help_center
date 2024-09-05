@@ -2,9 +2,7 @@ import { ReactElement, useState } from 'react';
 import { Container, Title, DivBoxes, Box, HeaderBox, BodyBox, TitleBox,
 	ControlBoxButton, FormQuickDraft, Input, TextArea, RecentDraftDiv,
 	TitleRecentDraft, DateRecentDraft, Li, Ul, ButtonSendQuickDraft,
-	LinkDraft,
-	WarnForm,
-	Bold} from './styles';
+	LinkDraft, WarnForm, Bold} from './styles';
 
 type HandleSubmitFormQuickDraft = {
 	(event: React.FormEvent): void;
@@ -23,8 +21,6 @@ const Dashboard: React.FC = (): ReactElement => {
 		now: true
 	});
 
-	console.log(boxVisibility);
-
 	const handleVisibilityBox: HandleVisibilityBox = (boxName: BoxName): void => {
 		setBoxVisibility((prevState) => ({
 			...prevState,
@@ -41,49 +37,59 @@ const Dashboard: React.FC = (): ReactElement => {
 			<Title>Dashboard</Title>
 
 			<DivBoxes>
-				<Box>
+			<Box>
 					<HeaderBox>
-						<TitleBox>Atividade</TitleBox>
-						<ControlBoxButton onClick={(): void => handleVisibilityBox('activity')} />
+						<TitleBox>Agora</TitleBox>
+						<ControlBoxButton title='Ocultar conteúdo do box' className={!boxVisibility.now ? 'rotate': ''}
+							onClick={(): void => handleVisibilityBox('now')} />
 					</HeaderBox>
-					<BodyBox>
+					{boxVisibility.now &&
+						<BodyBox>
 
-					</BodyBox>
+						</BodyBox>
+					}
 				</Box>
 
 				<Box>
 					<HeaderBox>
 						<TitleBox>Rascunho Rápido</TitleBox>
-						<ControlBoxButton onClick={(): void => handleVisibilityBox('quickDraft')} />
+						<ControlBoxButton title='Ocultar conteúdo do box' className={!boxVisibility.quickDraft ? 'rotate' : ''}
+							onClick={(): void => handleVisibilityBox('quickDraft')} />
 					</HeaderBox>
-					<BodyBox>
-						<FormQuickDraft action='' method='POST' onSubmit={handleSubmitFormQuickDraft}>
-							<WarnForm>Campos com <Bold>*</Bold> são obrigatórios</WarnForm>
-							<Input type='text' name='title' id='title' placeholder='Título *' />
-							<TextArea name='text' id='text' placeholder='O que você está pensando? *'></TextArea>
-							<ButtonSendQuickDraft type='submit'>Salvar como rascunho</ButtonSendQuickDraft>
-						</FormQuickDraft>
+					{boxVisibility.quickDraft &&
+						<BodyBox>
+							<FormQuickDraft action='/quick-draft' method='POST' onSubmit={handleSubmitFormQuickDraft}>
+								<WarnForm>Campos com <Bold>*</Bold> são obrigatórios</WarnForm>
+								<Input type='text' name='title' id='title' placeholder='Título *' />
+								<TextArea name='text' id='text' placeholder='O que você está pensando? *'></TextArea>
+								<ButtonSendQuickDraft type='submit'>Salvar como rascunho</ButtonSendQuickDraft>
+							</FormQuickDraft>
 
-						<RecentDraftDiv>
-							<TitleRecentDraft>Seus rascunhos recentes</TitleRecentDraft>
-							<Ul>
-								<Li><LinkDraft href='#'>(Sem título)</LinkDraft> <DateRecentDraft>2 de setembro de 2024</DateRecentDraft></Li>
-								<Li><LinkDraft href='#'>(Sem título)</LinkDraft> <DateRecentDraft>2 de setembro de 2024</DateRecentDraft></Li>
-								<Li><LinkDraft href='#'>(Sem título)</LinkDraft> <DateRecentDraft>2 de setembro de 2024</DateRecentDraft></Li>
-							</Ul>
-						</RecentDraftDiv>
-					</BodyBox>
+							<RecentDraftDiv>
+								<TitleRecentDraft>Seus rascunhos recentes</TitleRecentDraft>
+								<Ul>
+									<Li><LinkDraft href='#'>(Sem título)</LinkDraft> <DateRecentDraft>2 de setembro de 2024</DateRecentDraft></Li>
+									<Li><LinkDraft href='#'>(Sem título)</LinkDraft> <DateRecentDraft>2 de setembro de 2024</DateRecentDraft></Li>
+									<Li><LinkDraft href='#'>(Sem título)</LinkDraft> <DateRecentDraft>2 de setembro de 2024</DateRecentDraft></Li>
+								</Ul>
+							</RecentDraftDiv>
+						</BodyBox>
+					}
 				</Box>
 
 				<Box>
 					<HeaderBox>
-						<TitleBox>Agora</TitleBox>
-						<ControlBoxButton onClick={(): void => handleVisibilityBox('now')} />
+						<TitleBox>Atividade</TitleBox>
+						<ControlBoxButton title='Ocultar conteúdo do box' className={!boxVisibility.activity ? 'rotate': ''}
+							onClick={(): void => handleVisibilityBox('activity')} />
 					</HeaderBox>
-					<BodyBox>
+					{boxVisibility.activity &&
+						<BodyBox>
 
-					</BodyBox>
+						</BodyBox>
+					}
 				</Box>
+
 			</DivBoxes>
 		</Container>
 	)
