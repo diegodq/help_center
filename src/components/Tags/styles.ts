@@ -47,7 +47,6 @@ export const Input = styled.input`
 		width: 500px;
 	`}
 
-
 	${({type}) => type === 'submit' && `
 		color: white;
 		background-color: #135E96;
@@ -85,8 +84,8 @@ export const THead = styled.thead`
 `;
 
 export const TR = styled.tr`
-		border: 1px solid #e6e6e6;
-		background-color: #FFFFFF;
+	border: 1px solid #e6e6e6;
+	background-color: #FFFFFF;
 `;
 
 export const TH = styled.th`
@@ -108,6 +107,18 @@ export const TBody = styled.tbody`
 
 export const TFooter = styled.tfoot`
 
+`;
+
+export const TRBody = styled.tr`
+	&:nth-child(2n+2) {
+		background-color: white;
+	}
+`;
+
+export const TDBody = styled.td`
+	padding: 8px 0;
+	font: 1rem bahnschrift, sans-serif;
+	text-align: center;
 `;
 
 export const Checkbox = styled.input`

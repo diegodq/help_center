@@ -77,7 +77,6 @@ export const TableMassActions = styled.div`
 `;
 
 export const Table = styled.table`
-	border: 1px solid red;
 	border-collapse: collapse;
 	width: 100%;
 	table-layout: fixed;
@@ -107,10 +106,6 @@ export const TH = styled.th`
 	text-align: left;
 `;
 
-export const Checkbox = styled.input`
-
-`;
-
 export const TD = styled.td`
 	padding: 6px;
 	font: 1rem bahnschrift, sans-serif;
@@ -134,6 +129,10 @@ export const TDBody = styled.td`
 	padding: 8px 0;
 	font: 1rem bahnschrift, sans-serif;
 	text-align: center;
+`;
+
+export const Checkbox = styled.input`
+
 `;
 
 export const DivFiltersTable = styled.div`

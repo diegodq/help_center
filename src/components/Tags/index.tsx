@@ -3,7 +3,9 @@ import { useLocation, Location } from 'react-router-dom';
 import FormCategoriesTags from '../FormCategoriesTags';
 import { Container, AddCategoriesDiv, TitleDivCategory, Title, TableDiv, Table, THead,
 	TBody, TFooter, TR, TD, Checkbox, DivFilters, SelectFilter,
-	OptionFilter, ApplyButtonFilter, LoadingSpinner} from './styles';
+	OptionFilter, ApplyButtonFilter, LoadingSpinner,
+	TRBody,
+	TDBody} from './styles';
 
 const Tags: React.FC = (): ReactElement => {
 	const [actualRoute, setActualRoute] = useState<string>('');
@@ -42,7 +44,9 @@ const Tags: React.FC = (): ReactElement => {
 					</THead>
 
 					<TBody>
-
+						<TRBody>
+							<TDBody colSpan={2}>Sem dados</TDBody>
+						</TRBody>
 					</TBody>
 
 					<TFooter>

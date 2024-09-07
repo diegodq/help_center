@@ -2,7 +2,9 @@ import { ChangeEvent, ReactElement, useEffect, useState } from 'react';
 import { useLocation, Location } from 'react-router-dom';
 import { Container, AddCategoriesDiv, TitleDivCategory, Title, TableDiv, Table, THead, TBody, TFooter,
 	TR, TD, Checkbox, DivFilters, SelectFilter, OptionFilter,
-	ApplyButtonFilter, LoadingSpinner } from './styles';
+	ApplyButtonFilter, LoadingSpinner,
+	TRBody,
+	TDBody} from './styles';
 
 import FormCategoriesTags from '../FormCategoriesTags';
 
@@ -47,7 +49,9 @@ const NewCategory: React.FC = (): ReactElement => {
 					</THead>
 
 					<TBody>
-
+						<TRBody>
+							<TDBody colSpan={2}>Sem dados</TDBody>
+						</TRBody>
 					</TBody>
 
 					<TFooter>

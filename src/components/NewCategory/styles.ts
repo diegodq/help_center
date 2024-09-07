@@ -110,6 +110,18 @@ export const TFooter = styled.tfoot`
 
 `;
 
+export const TRBody = styled.tr`
+	&:nth-child(2n+2) {
+		background-color: white;
+	}
+`;
+
+export const TDBody = styled.td`
+	padding: 8px 0;
+	font: 1rem bahnschrift, sans-serif;
+	text-align: center;
+`;
+
 export const Checkbox = styled.input`
 
 `;

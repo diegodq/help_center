@@ -1,21 +1,38 @@
-import { ReactElement } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import { NavigateFunction, useNavigate } from 'react-router-dom';
 import { Container, DivTitle, H1, NewPostButton, Filters, LinkFilter,
 	Div, InputFilter, Bold, TableMassActions, Table, THeader, TFooter, TBody, TR, TH, TD, Checkbox,
 	DivFiltersTable, DivMassOption, SelectMassOption, MassOptions, MassApplyButton, DivFilterSelect,
 	SelectDate, OptionDate, SelectCategories, OptionCategories, ButtonFilters, LoadingSpinner,
-	TDBody,
-	TRBody
+	TDBody, TRBody
  } from './styles';
 
 type HandleNewFunction = () => void;
 
 const Posts: React.FC = (): ReactElement => {
 	const navigation: NavigateFunction = useNavigate();
+	const [colSpan, setColSpan] = useState<number>(4);
 
 	const HandleNewPost: HandleNewFunction = (): void => {
 		navigation('/panel/new-post');
 	}
+
+	const updateColSpan: HandleNewFunction = () => {
+		let columns: number = 4;
+
+		if (window.innerWidth <= 600)
+			columns -= 2;
+
+		setColSpan(columns);
+	}
+
+	useEffect((): () => void => {
+		updateColSpan();
+		window.addEventListener('resize', updateColSpan);
+		return (): void => {
+			window.removeEventListener('resize', updateColSpan);
+		};
+	}, []);
 
 	return (
 		<Container>
@@ -76,7 +93,7 @@ const Posts: React.FC = (): ReactElement => {
 
 					<TBody>
 						<TRBody>
-							<TDBody colSpan={4}>Sem dados</TDBody>
+							<TDBody colSpan={colSpan}>Sem dados</TDBody>
 						</TRBody>
 					</TBody>
 

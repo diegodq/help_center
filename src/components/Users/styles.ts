@@ -61,7 +61,6 @@ export const TableMassActions = styled.div`
 `;
 
 export const Table = styled.table`
-	border: 1px solid red;
 	border-collapse: collapse;
 	width: 100%;
 	table-layout: fixed;

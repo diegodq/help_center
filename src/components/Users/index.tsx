@@ -1,19 +1,35 @@
-import { ReactElement } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import { NavigateFunction, useNavigate } from 'react-router-dom';
 import { Container, DivTitle, H1, NewUserButton, Filters, InputFilter, TableMassActions, Table, THeader, TFooter, TBody, TR, TH, Checkbox,
 	DivFiltersTable, DivMassOption, SelectMassOption, MassOptions, MassApplyButton, DivFilterSelect,
-	SelectDate, OptionDate, ButtonFilters, LoadingSpinner,
-	TRBody,
-	TDBody} from './styles';
+	SelectDate, OptionDate, ButtonFilters, LoadingSpinner, TRBody, TDBody} from './styles';
 
 type HandleAddNewUser = () => void;
 
 const Users: React.FC = (): ReactElement => {
 	const navigate: NavigateFunction = useNavigate();
+	const [colSpan, setColSpan] = useState<number>(4);
 
 	const handleAddNewUser: HandleAddNewUser = (): void => {
 		navigate('/panel/new-user');
 	}
+
+	const updateColSpan: HandleAddNewUser = (): void => {
+		let columns: number = 4;
+
+		if (window.innerWidth <= 600)
+			columns -= 2;
+
+		setColSpan(columns);
+	}
+
+	useEffect((): () => void => {
+		updateColSpan();
+		window.addEventListener('resize', updateColSpan);
+		return (): void => {
+			window.removeEventListener('resize', updateColSpan);
+		}
+	}, []);
 
 	return (
 		<Container>
@@ -63,7 +79,7 @@ const Users: React.FC = (): ReactElement => {
 
 					<TBody>
 						<TRBody>
-							<TDBody colSpan={4}>Sem dados</TDBody>
+							<TDBody colSpan={colSpan}>Sem dados</TDBody>
 						</TRBody>
 					</TBody>
 
