@@ -1,11 +1,22 @@
 import { ReactElement } from 'react';
+import { NavigateFunction, useNavigate } from 'react-router-dom';
 import { Container, DivTitle, H1, NewPostButton, Filters, LinkFilter,
 	Div, InputFilter, Bold, TableMassActions, Table, THeader, TFooter, TBody, TR, TH, TD, Checkbox,
 	DivFiltersTable, DivMassOption, SelectMassOption, MassOptions, MassApplyButton, DivFilterSelect,
-	SelectDate, OptionDate, SelectCategories, OptionCategories, ButtonFilters, LoadingSpinner
+	SelectDate, OptionDate, SelectCategories, OptionCategories, ButtonFilters, LoadingSpinner,
+	TDBody,
+	TRBody
  } from './styles';
 
+type HandleNewFunction = () => void;
+
 const Posts: React.FC = (): ReactElement => {
+	const navigation: NavigateFunction = useNavigate();
+
+	const HandleNewPost: HandleNewFunction = (): void => {
+		navigation('/panel/new-post');
+	}
+
 	return (
 		<Container>
 			<DivTitle>
@@ -13,7 +24,7 @@ const Posts: React.FC = (): ReactElement => {
 
 			</DivTitle>
 
-			<NewPostButton>Adicionar novo post</NewPostButton>
+			<NewPostButton onClick={HandleNewPost}>Adicionar novo post</NewPostButton>
 
 			<Filters>
 				<Div>
@@ -64,7 +75,9 @@ const Posts: React.FC = (): ReactElement => {
 					</THeader>
 
 					<TBody>
-
+						<TRBody>
+							<TDBody colSpan={4}>Sem dados</TDBody>
+						</TRBody>
 					</TBody>
 
 					<TFooter>

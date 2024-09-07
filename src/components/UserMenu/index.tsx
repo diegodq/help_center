@@ -24,7 +24,7 @@ const UserMenu: React.FC = (): ReactElement => {
 			hideMenuRef.current.classList.remove('showUserMenuHide');
 	}
 
-	const handleLogOutUser: HandleLogOutUser = ( ): void => {
+	const handleLogOutUser: HandleLogOutUser = (): void => {
 		window.localStorage.removeItem('authToken');
 		navigate('/login');
 	}

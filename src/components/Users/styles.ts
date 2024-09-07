@@ -84,6 +84,18 @@ export const TR = styled.tr`
 	background-color: #FFFFFF;
 `;
 
+export const TRBody = styled.tr`
+	&:nth-child(2n+2) {
+		background-color: white;
+	}
+`;
+
+export const TDBody = styled.td`
+	padding: 8px 0;
+	font: 1rem bahnschrift, sans-serif;
+	text-align: center;
+`;
+
 export const TH = styled.th`
 	font: 1rem bahnschrift, sans-serif;
 	padding: 6px;

@@ -1,16 +1,27 @@
 import { ReactElement } from 'react';
+import { NavigateFunction, useNavigate } from 'react-router-dom';
 import { Container, DivTitle, H1, NewUserButton, Filters, InputFilter, TableMassActions, Table, THeader, TFooter, TBody, TR, TH, Checkbox,
 	DivFiltersTable, DivMassOption, SelectMassOption, MassOptions, MassApplyButton, DivFilterSelect,
-	SelectDate, OptionDate, ButtonFilters, LoadingSpinner } from './styles';
+	SelectDate, OptionDate, ButtonFilters, LoadingSpinner,
+	TRBody,
+	TDBody} from './styles';
+
+type HandleAddNewUser = () => void;
 
 const Users: React.FC = (): ReactElement => {
+	const navigate: NavigateFunction = useNavigate();
+
+	const handleAddNewUser: HandleAddNewUser = (): void => {
+		navigate('/panel/new-user');
+	}
+
 	return (
 		<Container>
 			<DivTitle>
 				<H1>Usuários</H1>
 			</DivTitle>
 
-			<NewUserButton>Adicionar novo Usuário</NewUserButton>
+			<NewUserButton onClick={handleAddNewUser}>Adicionar novo Usuário</NewUserButton>
 
 			<Filters>
 				<InputFilter type='text' name='filter' id='filter' placeholder='Pesquisar por usuários' />
@@ -51,7 +62,9 @@ const Users: React.FC = (): ReactElement => {
 					</THeader>
 
 					<TBody>
-
+						<TRBody>
+							<TDBody colSpan={4}>Sem dados</TDBody>
+						</TRBody>
 					</TBody>
 
 					<TFooter>
