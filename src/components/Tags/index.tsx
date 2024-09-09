@@ -6,14 +6,25 @@ import { Container, AddCategoriesDiv, TitleDivCategory, Title, TableDiv, Table, 
 	OptionFilter, ApplyButtonFilter, LoadingSpinner,
 	TRBody,
 	TDBody} from './styles';
+import tags from '../../mockData/tags';
+
+type TagsType = {
+	name: string;
+	slug: string
+}
 
 const Tags: React.FC = (): ReactElement => {
-	const [actualRoute, setActualRoute] = useState<string>('');
 	const location: Location<{from: string}> = useLocation();
+	const [actualRoute, setActualRoute] = useState<string>('');
+	const [listTags, setListTags] = useState<Array<TagsType>>([]);
 
 	useEffect((): void => {
 		setActualRoute(location.pathname.substring('/panel/'.length));
 	}, [location]);
+
+	useEffect((): void => {
+		setListTags(tags);
+	}, [listTags]);
 
 	return (
 		<Container>
@@ -44,9 +55,18 @@ const Tags: React.FC = (): ReactElement => {
 					</THead>
 
 					<TBody>
-						<TRBody>
-							<TDBody colSpan={2}>Sem dados</TDBody>
-						</TRBody>
+						{listTags.length === 0 ? (
+							<TRBody>
+								<TDBody colSpan={2}>Sem dados</TDBody>
+							</TRBody>
+						) : (
+							listTags.map((tag, index) => (
+								<TRBody key={index}>
+									<TD><Checkbox type='checkbox' data-id={index} />{tag.name}</TD>
+									<TD>{tag.slug}</TD>
+      					</TRBody>
+							))
+						)}
 					</TBody>
 
 					<TFooter>

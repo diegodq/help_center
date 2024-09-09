@@ -7,18 +7,29 @@ import { Container, AddCategoriesDiv, TitleDivCategory, Title, TableDiv, Table, 
 	TDBody} from './styles';
 
 import FormCategoriesTags from '../FormCategoriesTags';
+import categories from '../../mockData/categories';
 
 type ElementEvent = ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>;
+
+type CategoriesType = {
+	category: string;
+	slug: string;
+}
 
 const NewCategory: React.FC = (): ReactElement => {
 	const [massAction, setMassAction] = useState<string>('nothing');
 	const [actualRoute, setActualRoute] = useState<string>('');
+	const [listCategories, setListCategories] = useState<Array<CategoriesType>>([]);
 
 	const location: Location<{from: string}> = useLocation();
 
 	useEffect((): void => {
 		setActualRoute(location.pathname.substring('/panel/'.length));
 	}, [location]);
+
+	useEffect(() => {
+		setListCategories(categories);
+	},[listCategories]);
 
 	return (
 		<Container>
@@ -49,9 +60,18 @@ const NewCategory: React.FC = (): ReactElement => {
 					</THead>
 
 					<TBody>
-						<TRBody>
-							<TDBody colSpan={2}>Sem dados</TDBody>
-						</TRBody>
+						{listCategories.length === 0 ? (
+							<TRBody>
+								<TDBody colSpan={2}>Sem dados</TDBody>
+							</TRBody>
+						) : (
+							listCategories.map((category, index) => (
+								<TRBody key={index}>
+									<TD><Checkbox type='checkbox' data-id={index} />{category.category}</TD>
+									<TD>{category.slug}</TD>
+      					</TRBody>
+							))
+						)}
 					</TBody>
 
 					<TFooter>

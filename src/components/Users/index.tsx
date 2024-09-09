@@ -2,23 +2,32 @@ import { ReactElement, useEffect, useState } from 'react';
 import { NavigateFunction, useNavigate } from 'react-router-dom';
 import { Container, DivTitle, H1, NewUserButton, Filters, InputFilter, TableMassActions, Table, THeader, TFooter, TBody, TR, TH, Checkbox,
 	DivFiltersTable, DivMassOption, SelectMassOption, MassOptions, MassApplyButton, DivFilterSelect,
-	SelectDate, OptionDate, ButtonFilters, LoadingSpinner, TRBody, TDBody} from './styles';
+	SelectDate, OptionDate, ButtonFilters, LoadingSpinner, TRBody, TDBody,
+	TD} from './styles';
+import users from '../../mockData/users';
 
 type HandleAddNewUser = () => void;
 
+type UserType = {
+	userName: string;
+	email: string;
+	role: string;
+}
+
 const Users: React.FC = (): ReactElement => {
 	const navigate: NavigateFunction = useNavigate();
-	const [colSpan, setColSpan] = useState<number>(4);
+	const [colSpan, setColSpan] = useState<number>(3);
+	const [listUsers, setListUsers] = useState<Array<UserType>>([]);
 
 	const handleAddNewUser: HandleAddNewUser = (): void => {
 		navigate('/panel/new-user');
 	}
 
 	const updateColSpan: HandleAddNewUser = (): void => {
-		let columns: number = 4;
+		let columns: number = 3;
 
 		if (window.innerWidth <= 600)
-			columns -= 2;
+			columns -= 1;
 
 		setColSpan(columns);
 	}
@@ -29,7 +38,11 @@ const Users: React.FC = (): ReactElement => {
 		return (): void => {
 			window.removeEventListener('resize', updateColSpan);
 		}
-	}, []);
+	}, [listUsers]);
+
+	useEffect((): void => {
+		setListUsers(users);
+	}, [])
 
 	return (
 		<Container>
@@ -73,14 +86,24 @@ const Users: React.FC = (): ReactElement => {
 							<TH><Checkbox type='checkbox' />Nome de usuário</TH>
 							<TH>E-mail</TH>
 							<TH className='hide-on-mobile'>Função</TH>
-							<TH className='hide-on-mobile'>Posts</TH>
+
 						</TR>
 					</THeader>
 
 					<TBody>
-						<TRBody>
-							<TDBody colSpan={colSpan}>Sem dados</TDBody>
-						</TRBody>
+						{listUsers.length === 0 ? (
+							<TRBody>
+								<TDBody colSpan={colSpan}>Sem dados</TDBody>
+							</TRBody>
+						) : (
+							listUsers.map((user, index) => (
+								<TRBody key={index}>
+									<TD><Checkbox type='checkbox' data-id={index} />{user.userName}</TD>
+									<TD>{user.email}</TD>
+									<TD>{user.role}</TD>
+      					</TRBody>
+							))
+						)}
 					</TBody>
 
 					<TFooter>
@@ -88,7 +111,6 @@ const Users: React.FC = (): ReactElement => {
 							<TH><Checkbox type='checkbox' />Nome de usuário</TH>
 							<TH>E-mail</TH>
 							<TH className='hide-on-mobile'>Função</TH>
-							<TH className='hide-on-mobile'>Posts</TH>
 						</TR>
 					</TFooter>
 				</Table>

@@ -1,4 +1,4 @@
-import React, { ReactElement, RefObject, useRef, useState } from 'react';
+import React, { ReactElement, RefObject, useEffect, useRef, useState } from 'react';
 import { Container, Header, Aside, Main, DivContent, Div, SlidePanelIndicator} from './styles';
 import MenuIcon from '../../components/MenuIcon';
 import LogoIcon from '../../components/LogoIcon';
@@ -39,6 +39,20 @@ const Painel: React.FC = (): ReactElement => {
 			asideMenuRef.current!.classList.remove('slidePanel');
 		}
 	}
+
+	useEffect((): () => void => {
+		const handleMouseEvent: (event: MouseEvent) => void = (event: MouseEvent) => {
+			if (event.clientX < 5) {
+				console.log('touched edge left');
+			}
+		}
+
+		window.addEventListener('mousemove', handleMouseEvent);
+
+		return (): void => {
+			window.removeEventListener('mousemove', handleMouseEvent);
+		}
+	}, []);
 
 	return (
 		<Container>

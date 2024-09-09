@@ -109,7 +109,7 @@ export const TH = styled.th`
 `;
 
 export const Checkbox = styled.input`
-
+	margin-right: 7px;
 `;
 
 export const TD = styled.td`

@@ -122,7 +122,7 @@ export const TDBody = styled.td`
 `;
 
 export const Checkbox = styled.input`
-
+	margin-right: 7px;
 `;
 
 export const DivFilters = styled.div`
