@@ -57,6 +57,20 @@ export const Div = styled.div`
 	margin-right: 10px;
 `;
 
+export const DivAction = styled.div`
+	height: 20px;
+	display: flex;
+	padding: 2px 0;
+`;
+
+export const ButtonAction = styled.button`
+	border: none;
+	background: none;
+	font: .9rem bahnschrift, sans-serif;
+	cursor: pointer;
+	color: #135E96;
+`;
+
 export const InputFilter = styled.input`
 	outline: none;
 	padding: 5px 4px;

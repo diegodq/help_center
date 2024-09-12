@@ -3,7 +3,8 @@ import { NavigateFunction, useNavigate } from 'react-router-dom';
 import { Container, DivTitle, H1, NewPostButton, Filters, LinkFilter,
 	Div, InputFilter, Bold, TableMassActions, Table, THeader, TFooter, TBody, TR, TH, TD, Checkbox,
 	DivFiltersTable, DivMassOption, SelectMassOption, MassOptions, MassApplyButton, DivFilterSelect,
-	SelectDate, OptionDate, SelectCategories, OptionCategories, ButtonFilters, LoadingSpinner, TDBody, TRBody } from './styles';
+	SelectDate, OptionDate, SelectCategories, OptionCategories, ButtonFilters, LoadingSpinner, TDBody,
+	TRBody, DivAction, ButtonAction } from './styles';
 
 import mockData from '../../mockData/posts';
 
@@ -24,9 +25,10 @@ type PostType = {
 
 const Posts: React.FC = (): ReactElement => {
 	const navigation: NavigateFunction = useNavigate();
+
 	const [colSpan, setColSpan] = useState<number>(4);
 	const [listDataPosts, setListDataPosts] = useState<Array<PostType>>([]);
-	const[checkBoxChecked, setCheckBoxChecked] = useState<boolean>(false);
+	const [isChecked, setIsChecked] = useState<boolean>(false);
 	const checkBoxRef: MutableRefObject<(HTMLInputElement | null)[]> = useRef<Array<HTMLInputElement | null>>([]);
 
 	const HandleNewPost: HandleNewFunction = (): void => {
@@ -43,9 +45,9 @@ const Posts: React.FC = (): ReactElement => {
 	}
 
 	const selectAllCheckbox: SelectAllCheckbox = (event: CheckBoxChange): void => {
-		setCheckBoxChecked(event.target.checked);
+		setIsChecked(event.target.checked);
 
-		if (!checkBoxChecked) {
+		if (!isChecked) {
 			checkBoxRef.current.map((checkbox: HTMLInputElement | null): void => {
 				checkbox!.setAttribute('checked', 'checked');
 			});
@@ -133,8 +135,18 @@ const Posts: React.FC = (): ReactElement => {
 						) : (
 							listDataPosts.map((post: PostType, index: number) => (
 								<TRBody key={index}>
-									<TD><Checkbox ref={(checkbox: HTMLInputElement | null): HTMLInputElement | null =>
-										(checkBoxRef.current[index] = checkbox)} type='checkbox' data-id={index} />{post.title}</TD>
+									<TD>
+										<Checkbox ref={(checkbox: HTMLInputElement | null): HTMLInputElement | null =>
+											(checkBoxRef.current[index] = checkbox)} type='checkbox' data-id={index} />
+
+											{post.title}
+
+										<DivAction>
+											<ButtonAction>Editar</ButtonAction>
+											<ButtonAction>Excluir</ButtonAction>
+											<ButtonAction>Visualizar</ButtonAction>
+										</DivAction>
+									</TD>
 									<TD>{post.author}</TD>
 									<TD className='hide-on-mobile'>{post.category}</TD>
 									<TD className='hide-on-mobile'>{post.date}</TD>

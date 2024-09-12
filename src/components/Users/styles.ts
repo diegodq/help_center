@@ -83,6 +83,20 @@ export const TR = styled.tr`
 	background-color: #FFFFFF;
 `;
 
+export const DivAction = styled.div`
+	height: 20px;
+	display: flex;
+	padding: 2px 0;
+`;
+
+export const ButtonAction = styled.button`
+	border: none;
+	background: none;
+	font: .9rem bahnschrift, sans-serif;
+	cursor: pointer;
+	color: #135E96;
+`;
+
 export const TRBody = styled.tr`
 	&:nth-child(2n+2) {
 		background-color: white;

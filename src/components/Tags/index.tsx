@@ -1,12 +1,14 @@
-import { ReactElement, useEffect, useState } from 'react';
+import { ChangeEvent, MutableRefObject, ReactElement, useEffect, useRef, useState } from 'react';
 import { useLocation, Location } from 'react-router-dom';
 import FormCategoriesTags from '../FormCategoriesTags';
 import { Container, AddCategoriesDiv, TitleDivCategory, Title, TableDiv, Table, THead,
 	TBody, TFooter, TR, TD, Checkbox, DivFilters, SelectFilter,
-	OptionFilter, ApplyButtonFilter, LoadingSpinner,
-	TRBody,
-	TDBody} from './styles';
+	OptionFilter, ApplyButtonFilter, LoadingSpinner, TRBody, TDBody, DivAction, ButtonAction} from './styles';
 import tags from '../../mockData/tags';
+
+type handleSelectAllCheckbox = {
+	(event: ChangeEvent<HTMLInputElement | null>): void;
+}
 
 type TagsType = {
 	name: string;
@@ -15,8 +17,25 @@ type TagsType = {
 
 const Tags: React.FC = (): ReactElement => {
 	const location: Location<{from: string}> = useLocation();
+
 	const [actualRoute, setActualRoute] = useState<string>('');
 	const [listTags, setListTags] = useState<Array<TagsType>>([]);
+	const listCheckboxRef: MutableRefObject<(HTMLInputElement | null)[]> = useRef<Array<HTMLInputElement | null>>([]);
+	const [isChecked, setIsChecked] = useState<boolean>(false);
+
+	const handleSelectAllCheckbox: handleSelectAllCheckbox = (event: ChangeEvent<HTMLInputElement | null>): void => {
+		setIsChecked(event.target.checked);
+
+		if (!isChecked) {
+			listCheckboxRef.current.map((checkbox: HTMLInputElement | null): void => {
+				checkbox!.setAttribute('checked', 'checked');
+			});
+		} else {
+			listCheckboxRef.current.map((checkbox: HTMLInputElement | null): void => {
+				checkbox!.removeAttribute('checked');
+			});
+		}
+	}
 
 	useEffect((): void => {
 		setActualRoute(location.pathname.substring('/panel/'.length));
@@ -49,7 +68,7 @@ const Tags: React.FC = (): ReactElement => {
 				<Table>
 					<THead>
 						<TR>
-							<TD><Checkbox type='checkbox' name='filter' id='filter' />Nome</TD>
+							<TD><Checkbox type='checkbox' onChange={handleSelectAllCheckbox} />Nome</TD>
 							<TD>Slug</TD>
 						</TR>
 					</THead>
@@ -60,9 +79,18 @@ const Tags: React.FC = (): ReactElement => {
 								<TDBody colSpan={2}>Sem dados</TDBody>
 							</TRBody>
 						) : (
-							listTags.map((tag, index) => (
+							listTags.map((tag: TagsType, index: number) => (
 								<TRBody key={index}>
-									<TD><Checkbox type='checkbox' data-id={index} />{tag.name}</TD>
+									<TD>
+										<Checkbox ref={(checkbox: HTMLInputElement | null): HTMLInputElement | null =>
+											(listCheckboxRef.current[index] = checkbox)} type='checkbox' data-id={index} />
+										{tag.name}
+
+										<DivAction>
+											<ButtonAction>Editar</ButtonAction>
+											<ButtonAction>Excluir</ButtonAction>
+										</DivAction>
+									</TD>
 									<TD>{tag.slug}</TD>
       					</TRBody>
 							))

@@ -65,6 +65,20 @@ export const Div = styled.div`
 	}
 `;
 
+export const DivAction = styled.div`
+	height: 20px;
+	display: flex;
+	padding: 2px 0;
+`;
+
+export const ButtonAction = styled.button`
+	border: none;
+	background: none;
+	font: .9rem bahnschrift, sans-serif;
+	cursor: pointer;
+	color: #135E96;
+`;
+
 export const Text = styled.p`
 	font: .9rem bahnschrift, sans-serif;
 	margin-top: 8px;

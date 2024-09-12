@@ -1,15 +1,19 @@
-import { ChangeEvent, ReactElement, useEffect, useState } from 'react';
+import { ChangeEvent, MutableRefObject, ReactElement, useEffect, useRef, useState } from 'react';
 import { useLocation, Location } from 'react-router-dom';
 import { Container, AddCategoriesDiv, TitleDivCategory, Title, TableDiv, Table, THead, TBody, TFooter,
-	TR, TD, Checkbox, DivFilters, SelectFilter, OptionFilter,
-	ApplyButtonFilter, LoadingSpinner,
-	TRBody,
-	TDBody} from './styles';
+	TR, TD, Checkbox, DivFilters, SelectFilter, OptionFilter, ApplyButtonFilter, LoadingSpinner,
+	TRBody, TDBody,
+	DivAction,
+	ButtonAction} from './styles';
 
 import FormCategoriesTags from '../FormCategoriesTags';
 import categories from '../../mockData/categories';
 
 type ElementEvent = ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>;
+
+type HandleCheckboxChecked = {
+	(event: ChangeEvent<HTMLInputElement>): void;
+}
 
 type CategoriesType = {
 	category: string;
@@ -17,18 +21,37 @@ type CategoriesType = {
 }
 
 const NewCategory: React.FC = (): ReactElement => {
+	const location: Location<{from: string}> = useLocation();
+
 	const [massAction, setMassAction] = useState<string>('nothing');
 	const [actualRoute, setActualRoute] = useState<string>('');
 	const [listCategories, setListCategories] = useState<Array<CategoriesType>>([]);
+	const [checkBoxChecked, setCheckBoxChecked] = useState<boolean>(false);
 
-	const location: Location<{from: string}> = useLocation();
+	const checkBoxRef: MutableRefObject<(HTMLInputElement | null)[]> = useRef<Array<HTMLInputElement | null>>([]);
+
+	const handleCheckboxChecked: HandleCheckboxChecked = (event: ChangeEvent<HTMLInputElement>): void => {
+		setCheckBoxChecked(event.target.checked);
+
+		if (!checkBoxChecked) {
+			checkBoxRef.current.map((checkbox: HTMLInputElement | null): void => {
+				checkbox!.setAttribute('checked', 'checked');
+			})
+		} else {
+			checkBoxRef.current.map((checkbox: HTMLInputElement | null): void => {
+				checkbox!.removeAttribute('checked');
+			})
+		}
+	}
 
 	useEffect((): void => {
 		setActualRoute(location.pathname.substring('/panel/'.length));
 	}, [location]);
 
-	useEffect(() => {
+	useEffect((): void => {
 		setListCategories(categories);
+		checkBoxRef.current = listCategories.map((_: CategoriesType, index: number): HTMLInputElement | null =>
+			checkBoxRef.current[index] ?? null);
 	},[listCategories]);
 
 	return (
@@ -54,7 +77,7 @@ const NewCategory: React.FC = (): ReactElement => {
 				<Table>
 					<THead>
 						<TR>
-							<TD><Checkbox type='checkbox' name='filter' id='filter' />Nome</TD>
+							<TD><Checkbox type='checkbox' name='filter' id='filter' onChange={handleCheckboxChecked} />Nome</TD>
 							<TD>Slug</TD>
 						</TR>
 					</THead>
@@ -65,9 +88,19 @@ const NewCategory: React.FC = (): ReactElement => {
 								<TDBody colSpan={2}>Sem dados</TDBody>
 							</TRBody>
 						) : (
-							listCategories.map((category, index) => (
+							listCategories.map((category: CategoriesType, index: number) => (
 								<TRBody key={index}>
-									<TD><Checkbox type='checkbox' data-id={index} />{category.category}</TD>
+									<TD>
+										<Checkbox ref={(checkbox: HTMLInputElement | null): HTMLInputElement | null =>
+											(checkBoxRef.current[index] = checkbox)} type='checkbox' data-id={index} />
+
+											{category.category}
+
+											<DivAction>
+												<ButtonAction>Editar</ButtonAction>
+												<ButtonAction>Excluir</ButtonAction>
+										</DivAction>
+									</TD>
 									<TD>{category.slug}</TD>
       					</TRBody>
 							))

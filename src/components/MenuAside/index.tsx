@@ -1,4 +1,4 @@
-import { ReactElement, useState, useRef, RefObject } from 'react';
+import React, { ReactElement, useState, useRef, RefObject } from 'react';
 import { Container, Nav, Ul, Li, LinkMenu, NewPostIcon,
 	UserIcon, IoIosSettingsIcon, DashboardIcon, AppearanceIcon,
 	PostsSubMenu, UsersSubMenu, UlSubMenu, LiSubMenu} from './styles';
