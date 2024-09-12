@@ -7,6 +7,7 @@ import { Container, DivTitle, H1, NewPostButton, Filters, LinkFilter,
 	TRBody, DivAction, ButtonAction } from './styles';
 
 import mockData from '../../mockData/posts';
+import WarnModal from '../WarnModal';
 
 type HandleNewFunction = () => void;
 
@@ -192,6 +193,7 @@ const Posts: React.FC = (): ReactElement => {
 					</DivFilterSelect>
 				</DivFiltersTable>
 			</TableMassActions>
+			<WarnModal text={'Deseja remover este Post?'} />
 		</Container>
 	)
 }

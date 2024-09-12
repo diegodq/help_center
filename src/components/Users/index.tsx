@@ -172,7 +172,7 @@ const Users: React.FC = (): ReactElement => {
 			</TableMassActions>
 
 			<EditUserModal />
-			<WarnModal text={'Deseja remover este usuário?'} />
+			<WarnModal text={'Deseja remover este usuário? Todos os posts deste usuário serão removidos.'} />
 		</Container>
 	)
 }
